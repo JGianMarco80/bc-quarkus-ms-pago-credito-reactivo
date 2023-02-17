@@ -15,14 +15,16 @@ public class PagoCreditoServiceImpl implements PagoCreditoService {
     PagoCreditoRepository repository;
 
     @Override
-    public List<PagoCredito> findByNumeroCuenta(String numeroCuenta) {
+    public List<PagoCredito> findByNumeroCuenta(String numeroCuenta, String tipoPago) {
         List<PagoCredito> pagoCreditos = repository.listAll();
 
         List<PagoCredito> pgObtenidos = new ArrayList<>();
 
         for (PagoCredito pg: pagoCreditos) {
-            if (pg.getNumeroCuenta().equals(numeroCuenta)) {
-                pgObtenidos.add(pg);
+            if(pg.getTipoPago().equals(tipoPago)){
+                if (pg.getNumeroCuenta().equals(numeroCuenta)) {
+                    pgObtenidos.add(pg);
+                }
             }
         }
 

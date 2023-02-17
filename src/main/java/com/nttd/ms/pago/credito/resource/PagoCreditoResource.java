@@ -17,7 +17,8 @@ public class PagoCreditoResource {
     PagoCreditoService pagoCreditoService;
 
     @GET
-    public List<PagoCredito> findByNumeroCuenta(@QueryParam("numeroCuenta") String numeroCuenta) {
-        return pagoCreditoService.findByNumeroCuenta(numeroCuenta);
+    public List<PagoCredito> findByNumeroCuenta(@QueryParam("numeroCuenta") String numeroCuenta,
+                                                @QueryParam("tipoPago") String tipoPago) {
+        return pagoCreditoService.findByNumeroCuenta(numeroCuenta, tipoPago);
     }
 }

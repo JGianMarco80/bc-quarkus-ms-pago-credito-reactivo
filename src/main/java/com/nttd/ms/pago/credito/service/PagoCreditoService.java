@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface PagoCreditoService {
 
-    List<PagoCredito> findByNumeroCuenta(String numeroCuenta);
+    List<PagoCredito> findByNumeroCuenta(String numeroCuenta, String tipoPago);
 
 }
